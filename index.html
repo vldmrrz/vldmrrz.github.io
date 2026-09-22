@@ -1,500 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volodymyr Ryzhkov - Full Stack Developer</title>
-    <meta name="description" content="Business-focused Full Stack Developer with 8+ years of experience specializing in Python, Django, FastAPI, Vue, and Nuxt. Architecting scalable solutions across Fintech, AdTech, and EdTech.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volodymyr Ryzhkov — Full Stack Developer</title>
+<meta name="description" content="Full stack developer in Navan, Ireland. Eight years building data-heavy products in Python (Django, FastAPI) and JavaScript (Vue, Nuxt) across fintech, adtech and edtech.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:  #faf8f5;
+  --ink:    #1a1815;
+  --muted:  #6b6355;
+  --rule:   #e0dbd2;
+  --accent: #8a3324;
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            background: #f7fafc;
-        }
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:  #141210;
+    --ink:    #ece7df;
+    --muted:  #9a9086;
+    --rule:   #2e2a25;
+    --accent: #d98b74;
+  }
+}
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, h4, p, ul, li, dl, dt, dd, figure { margin: 0; padding: 0; }
 
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-            transform: scale(1.5);
-        }
+html { -webkit-text-size-adjust: 100%; }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
 
-        .location {
-            font-size: 1.1em;
-            opacity: 0.9;
-            margin-bottom: 5px;
-        }
+::selection { background: var(--accent); color: var(--paper); }
 
-        .title {
-            font-size: 1.3em;
-            opacity: 0.95;
-            font-weight: 500;
-        }
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  transition: border-color .2s ease;
+}
+a:hover { border-bottom-color: var(--accent); }
 
-        .section {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            margin: 30px 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+/* ---------- masthead ---------- */
 
-        .section h2 {
-            font-size: 1.8em;
-            color: #667eea;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e2e8f0;
-        }
+.masthead { padding: 6rem 0 1rem; }
 
-        .summary {
-            font-size: 1.1em;
-            color: #4a5568;
-            line-height: 1.8;
-        }
+.name {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 8vw, 3.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
 
-        .experience-item {
-            margin-bottom: 35px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #e2e8f0;
-        }
+.name-rule {
+  width: 3.25rem;
+  height: 2px;
+  background: var(--accent);
+  margin: 1.5rem 0;
+}
 
-        .experience-item:last-child {
-            border-bottom: none;
-        }
+.role {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+.role strong { font-weight: 600; color: var(--ink); }
 
-        .job-header {
-            margin-bottom: 15px;
-        }
+.intro {
+  max-width: 34rem;
+  margin-top: 2.25rem;
+  font-size: 1.1875rem;
+  line-height: 1.7;
+}
 
-        .job-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 5px;
-        }
+.masthead .contact-inline {
+  margin-top: 1.75rem;
+  font-family: var(--mono);
+  font-size: .8125rem;
+}
 
-        .company-info {
-            color: #718096;
-            font-size: 1em;
-            margin-bottom: 10px;
-        }
+/* ---------- sections ---------- */
 
-        .project-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #667eea;
-            margin: 15px 0 10px 0;
-        }
+section {
+  margin-top: 4rem;
+  padding-top: 2.75rem;
+  border-top: 1px solid var(--rule);
+}
 
-        .experience-item ul {
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
+.label {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: .6875rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--muted);
+  margin-bottom: 2.25rem;
+}
 
-        .experience-item li {
-            margin-bottom: 8px;
-            color: #4a5568;
-        }
+/* ---------- experience ---------- */
 
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
+.job + .job {
+  margin-top: 3.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--rule);
+}
 
-        .tech-tag {
-            background: #edf2f7;
-            color: #4a5568;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: 500;
-        }
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem 1.5rem;
+  flex-wrap: wrap;
+}
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
+.job-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
 
-        .skill-category {
-            background: #f7fafc;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
+.dates {
+  font-family: var(--mono);
+  font-size: .78125rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
 
-        .skill-category h3 {
-            font-size: 1.1em;
-            color: #2d3748;
-            margin-bottom: 12px;
-        }
+.company {
+  margin-top: .3rem;
+  color: var(--muted);
+  font-size: .96875rem;
+}
 
-        .skill-category ul {
-            list-style: none;
-        }
+.blurb { margin-top: 1rem; max-width: 36rem; }
 
-        .skill-category li {
-            padding: 6px 0;
-            color: #4a5568;
-        }
+.project { margin-top: 2.5rem; }
 
-        .skill-category li:before {
-            content: "▹ ";
-            color: #667eea;
-            font-weight: bold;
-            margin-right: 8px;
-        }
+.project h4 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+}
 
-        .contact-section {
-            text-align: center;
-        }
+ul { list-style: none; margin-top: .875rem; }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
+li {
+  position: relative;
+  padding-left: 1.375rem;
+  margin-bottom: .625rem;
+  max-width: 38rem;
+}
 
-        .contact-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            background: #667eea;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .7em;
+  width: .5rem;
+  height: 1px;
+  background: var(--muted);
+  opacity: .55;
+}
 
-        .contact-item:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
+.tech {
+  margin-top: 1.125rem;
+  font-family: var(--mono);
+  font-size: .75rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
 
-        .education {
-            background: #f7fafc;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+/* ---------- skills & education ---------- */
 
-        .education h3 {
-            font-size: 1.2em;
-            color: #2d3748;
-            margin-bottom: 5px;
-        }
+.rows { border-top: 1px solid var(--rule); }
 
-        .education p {
-            color: #718096;
-        }
+.row {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: .25rem 2rem;
+  padding: 1.125rem 0;
+  border-bottom: 1px solid var(--rule);
+}
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #718096;
-        }
+.row dt {
+  font-family: var(--mono);
+  font-size: .6875rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  padding-top: .4rem;
+}
 
-        @media (max-width: 768px) {
-            .header {
-                padding: 60px 20px;
-            }
+.rows .row:last-child { border-bottom: none; }
 
-            h1 {
-                font-size: 2em;
-            }
+.row dd { margin: 0; }
 
-            .section {
-                padding: 25px;
-            }
+.degree { font-weight: 600; }
+.school { color: var(--muted); font-size: .96875rem; margin-top: .15rem; }
 
-            .section h2 {
-                font-size: 1.5em;
-            }
+/* ---------- contact ---------- */
 
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+.email {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  letter-spacing: -0.02em;
+  border-bottom-width: 2px;
+}
+
+.contact p { max-width: 32rem; margin-bottom: 1.5rem; }
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 5rem;
+  padding: 2rem 0 3.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: .6875rem;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 40rem) {
+  body { font-size: 1rem; }
+  .masthead { padding-top: 3.5rem; }
+  .intro { font-size: 1.0625rem; margin-top: 1.75rem; }
+  section { margin-top: 3rem; padding-top: 2.25rem; }
+  .label { margin-bottom: 1.75rem; }
+  .job + .job { margin-top: 2.75rem; padding-top: 2.75rem; }
+  .job-head { flex-direction: column; }
+  .dates { order: -1; }
+  .job-title { font-size: 1.3125rem; }
+  .row { grid-template-columns: 1fr; gap: .375rem; padding: 1rem 0; }
+  .row dt { padding-top: 0; }
+}
+</style>
 </head>
 <body>
-    <div class="header">
-        <div class="profile-img">
-            <img src="avatar.JPG" alt="Volodymyr Ryzhkov">
-        </div>
-        <h1>Volodymyr Ryzhkov</h1>
-        <p class="location">Navan, Ireland</p>
-        <p class="title">Full Stack Developer</p>
-    </div>
 
-    <div class="container">
-        <div class="section">
-            <h2>About Me</h2>
-            <p class="summary">
-                Business-focused Full Stack Developer with 8+ years of experience specializing in architecting and delivering high-impact solutions using Python (Django/FastAPI) and modern JavaScript (Vue/Nuxt). Adept at solving complex business challenges across Fintech, AdTech, and EdTech sectors. Experienced in end-to-end product design, scalable cloud infrastructure, and leveraging AI/ML models to drive process optimization and system efficiency.
-            </p>
-        </div>
+<div class="wrap">
 
-        <div class="section">
-            <h2>Experience</h2>
+  <header class="masthead">
+    <h1 class="name">Volodymyr Ryzhkov</h1>
+    <div class="name-rule"></div>
+    <p class="role"><strong>Full Stack Developer</strong> · Navan, Co. Meath, Ireland</p>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">Full Stack Developer</div>
-                    <div class="company-info">NDA (Fintech Industry) | Remote | July 2024 - December 2025</div>
-                </div>
-                <p style="color: #4a5568; margin-bottom: 15px;">
-                    Contributed to full-stack development of a fintech platform, working on both backend services and frontend interfaces within a cross-functional engineering team.
-                </p>
-                <ul>
-                    <li>Developed backend features and API endpoints for fintech CRM using Python, Django, Django-Ninja, and Pydantic</li>
-                    <li>Built and maintained frontend components using Vue 3, Nuxt 3, and PrimeVue</li>
-                    <li>Collaborated with architecture team on system design and technical specifications</li>
-                    <li>Maintained high code quality through code reviews and CI/CD pipelines</li>
-                </ul>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Django</span>
-                    <span class="tech-tag">Django-Ninja</span>
-                    <span class="tech-tag">Pydantic</span>
-                    <span class="tech-tag">Vue 3</span>
-                    <span class="tech-tag">Nuxt 3</span>
-                    <span class="tech-tag">PrimeVue</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">Redis</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">GitLab CI</span>
-                </div>
-            </div>
+    <p class="intro">
+      Full stack developer, eight years in. I work in Python (Django, FastAPI) and modern
+      JavaScript (Vue, Nuxt), usually owning system design as well as the code. Most of that
+      time has been in fintech, adtech and edtech — building data-heavy products, the cloud
+      infrastructure under them, and more recently putting AI and ML models to practical use:
+      normalising messy data, speech-to-text, vector search. I also mentor junior developers
+      and lead technical planning for the subsystems I own.
+    </p>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">Full Stack Developer</div>
-                    <div class="company-info">Daiquiri Team | Remote | August 2019 - December 2025</div>
-                </div>
-                <p style="color: #4a5568; margin-bottom: 15px;">
-                    Led architecture and full-stack development for diverse projects spanning EdTech, AdTech, IoT, and real estate domains. Responsible for system design, AI integrations, and delivering end-to-end solutions that drove business growth.
-                </p>
+    <p class="contact-inline"><a href="mailto:hi@ryzhkov.ie">hi@ryzhkov.ie</a></p>
+  </header>
 
-                <div class="project-title">EdTech Platform Architecture & Development</div>
-                <ul>
-                    <li>Led design and implementation of system architecture for global EdTech platform with personalized educational plans and coach payment integrations</li>
-                    <li>Engineered scalable CMS enabling coaches to publish branded websites on subdomains or custom domains, driving platform revenue growth</li>
-                    <li>Integrated AI solutions for normalizing course data and speech-to-text processing, improving content quality and search functionality</li>
-                </ul>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Django</span>
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">Vue 3</span>
-                    <span class="tech-tag">Nuxt 3</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">AWS</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">OpenAI</span>
-                    <span class="tech-tag">Speech-to-Text</span>
-                </div>
+  <section>
+    <h2 class="label">Experience</h2>
 
-                <div class="project-title">AdTech CRM & Automation</div>
-                <ul>
-                    <li>Engineered core subsystems for proprietary AdTech CRM managing thousands of Facebook ad accounts</li>
-                    <li>Built real-time notification system reducing budget waste by 10% through immediate alerts on underperforming campaigns</li>
-                    <li>Developed automation rule engine that increased agency revenue by 15% by auto-launching successful campaign variants</li>
-                </ul>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Django</span>
-                    <span class="tech-tag">Nuxt 2</span>
-                    <span class="tech-tag">Vue 2</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">RabbitMQ</span>
-                    <span class="tech-tag">REST APIs</span>
-                </div>
+    <article class="job">
+      <div class="job-head">
+        <h3 class="job-title">Full Stack Developer</h3>
+        <span class="dates">Aug 2019 — Present</span>
+      </div>
+      <p class="company">Daiquiri Team · Remote</p>
+      <p class="blurb">
+        Architecture and full stack development across edtech, adtech, IoT and real estate —
+        system design, AI integrations, and shipping end to end.
+      </p>
 
-                <div class="project-title">Language Learning Data Platform</div>
-                <ul>
-                    <li>Developed automated parsers ensuring reliable data collection for language learning platform</li>
-                    <li>Implemented comprehensive vocabulary support with word meanings, synonyms, and contextual usage</li>
-                    <li>Architected content database using Elasticsearch for high-speed full-text search capabilities</li>
-                </ul>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Nuxt 2</span>
-                    <span class="tech-tag">Vue 2</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">Elasticsearch</span>
-                    <span class="tech-tag">Web Scraping</span>
-                </div>
+      <div class="project">
+        <h4>EdTech Platform Architecture &amp; Development</h4>
+        <ul>
+          <li>Designed and implemented the system architecture for a global edtech platform, covering personalised educational plans and coach payment integrations.</li>
+          <li>Built a scalable CMS that lets coaches publish and customise branded sites on subdomains or their own domains, which grew both platform and coach revenue.</li>
+          <li>Integrated AI for normalising complex course data and for speech-to-text processing, improving content quality and search.</li>
+        </ul>
+        <p class="tech">Python · Django · FastAPI · Vue 3 · Nuxt 3 · PostgreSQL · AWS · Docker · OpenAI · speech-to-text models</p>
+      </div>
 
-                <div class="project-title">Additional Projects</div>
-                <ul>
-                    <li><strong>IoT Stock Monitoring:</strong> Built specialized system for retail shelf monitoring with real-time analytics and anomaly detection</li>
-                    <li><strong>Real Estate Data Platform:</strong> Created robust parsers with monitoring for B2B service handling thousands of property listings</li>
-                </ul>
-            </div>
+      <div class="project">
+        <h4>Language Learning Data Platform</h4>
+        <ul>
+          <li>Wrote the automated parsers that keep the content database populated, with reliable and continuous collection.</li>
+          <li>Implemented vocabulary support end to end: sourcing, normalising and storing word meanings, synonyms and contextual usage.</li>
+          <li>Architected the content database layer on Elasticsearch for high-speed full-text search across all textual data.</li>
+        </ul>
+        <p class="tech">Python · Nuxt 2 · Vue 2 · PostgreSQL · Elasticsearch · web scraping · data normalisation</p>
+      </div>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">Junior Software Developer</div>
-                    <div class="company-info">Boulevardier Group | Kyiv, Ukraine | August 2017 - August 2019</div>
-                </div>
-                <ul>
-                    <li>Engineered custom rule-based data normalization system for price aggregator, automatically processing 98%+ of objects and reducing manual work by 50%+</li>
-                    <li>Participated in full-stack development using Python and JavaScript frameworks</li>
-                    <li>Collaborated on database design and API development</li>
-                </ul>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Django</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">MySQL</span>
-                </div>
-            </div>
-        </div>
+      <div class="project">
+        <h4>AdTech CRM &amp; Automation</h4>
+        <ul>
+          <li>Built core subsystems for a proprietary adtech CRM managing thousands of Facebook ad accounts, with full campaign management.</li>
+          <li>A real-time notification system I built cut budget waste by 10% by flagging underperforming campaigns immediately.</li>
+          <li>An automation rule engine raised agency revenue by 15%, auto-launching successful campaign variants and handling support appeals for blocked accounts.</li>
+        </ul>
+        <p class="tech">Python · Django · Nuxt 2 · Vue 2 · PostgreSQL · RabbitMQ · REST APIs · real-time notifications</p>
+      </div>
 
-        <div class="section">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages & Core</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>TypeScript / JavaScript</li>
-                        <li>Full-stack development</li>
-                        <li>System architecture</li>
-                        <li>API design</li>
-                    </ul>
-                </div>
+      <div class="project">
+        <h4>IoT Stock Monitoring System</h4>
+        <ul>
+          <li>Built an IoT stock monitoring system for retail shelves, so clients could optimise replenishment and analyse product movement.</li>
+          <li>Built the data collection pipelines and analytics dashboards behind it: real-time inventory tracking and anomaly detection, including temperature spikes.</li>
+        </ul>
+        <p class="tech">Python · FastAPI · PostgreSQL · IoT protocols · data analytics</p>
+      </div>
 
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>Django / DRF</li>
-                        <li>Django-Ninja</li>
-                        <li>FastAPI</li>
-                        <li>RESTful APIs</li>
-                        <li>Microservices</li>
-                    </ul>
-                </div>
+      <div class="project">
+        <h4>Real Estate Data Platform</h4>
+        <ul>
+          <li>Wrote and maintained a set of real estate object parsers with a dedicated monitoring system around them.</li>
+          <li>Kept high-volume collection and normalisation running continuously for a B2B service handling thousands of property listings.</li>
+        </ul>
+        <p class="tech">Python · Django · PostgreSQL · web scraping · data normalisation · monitoring systems</p>
+      </div>
+    </article>
 
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>Vue (2/3)</li>
-                        <li>Nuxt (2/3/4)</li>
-                        <li>Tailwind CSS</li>
-                        <li>PrimeVue</li>
-                        <li>Capacitor (Mobile)</li>
-                    </ul>
-                </div>
+    <article class="job">
+      <div class="job-head">
+        <h3 class="job-title">Full Stack Developer</h3>
+        <span class="dates">Jul 2024 — Dec 2025</span>
+      </div>
+      <p class="company">NDA (Fintech industry) · Remote</p>
+      <p class="blurb">
+        Backend services and frontend interfaces for a fintech platform, inside a
+        cross-functional engineering team.
+      </p>
+      <ul>
+        <li>Developed backend features and API endpoints for the fintech CRM platform in Python — Django, Django-Ninja, Pydantic.</li>
+        <li>Built and maintained frontend components in Vue 3, Nuxt 3 and PrimeVue, keeping interfaces responsive and intuitive.</li>
+        <li>Worked with the architecture team on system design and technical specifications.</li>
+        <li>Reviewed code and helped hold the team's quality bar.</li>
+        <li>Worked on infrastructure automation and deployment using Docker and CI/CD pipelines.</li>
+      </ul>
+      <p class="tech">Python · Django · Django-Ninja · Pydantic · Vue 3 · Nuxt 3 · PrimeVue · PostgreSQL · Redis · Docker · GitLab CI</p>
+    </article>
 
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <ul>
-                        <li>PostgreSQL</li>
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                        <li>Redis</li>
-                        <li>Elasticsearch</li>
-                    </ul>
-                </div>
+    <article class="job">
+      <div class="job-head">
+        <h3 class="job-title">Junior Software Developer</h3>
+        <span class="dates">Aug 2017 — Aug 2019</span>
+      </div>
+      <p class="company">Boulevardier Group · Kyiv, Ukraine</p>
+      <p class="blurb">
+        Development and optimisation of custom CRM and internal management systems — where I
+        learned full stack work and business process automation.
+      </p>
+      <ul>
+        <li>Built a rule-based data normalisation system for a price aggregator's pipeline. It handled over 98% of incoming objects automatically and cut manual item-merging time by more than half.</li>
+        <li>Worked across the stack in Python and JavaScript frameworks.</li>
+        <li>Worked with senior developers on database design and API development.</li>
+      </ul>
+      <p class="tech">Python · Django · JavaScript · PostgreSQL · MySQL</p>
+    </article>
+  </section>
 
-                <div class="skill-category">
-                    <h3>DevOps & Infrastructure</h3>
-                    <ul>
-                        <li>AWS (EC2, S3)</li>
-                        <li>Docker</li>
-                        <li>Ansible</li>
-                        <li>CI/CD (GitHub, GitLab)</li>
-                        <li>RabbitMQ / Celery</li>
-                    </ul>
-                </div>
+  <section>
+    <h2 class="label">Skills</h2>
+    <dl class="rows">
+      <div class="row">
+        <dt>Languages &amp; core</dt>
+        <dd>Python, TypeScript/JavaScript; full stack development, system architecture, API design</dd>
+      </div>
+      <div class="row">
+        <dt>Backend &amp; APIs</dt>
+        <dd>Django, Django REST Framework, Django-Ninja, FastAPI; RESTful API design, microservices architecture</dd>
+      </div>
+      <div class="row">
+        <dt>Frontend</dt>
+        <dd>Vue (2/3), Nuxt (2/3/4), Tailwind CSS, PrimeVue; mobile development (Capacitor)</dd>
+      </div>
+      <div class="row">
+        <dt>Databases &amp; data</dt>
+        <dd>PostgreSQL (incl. pgvector), MySQL, MongoDB, Redis, Elasticsearch; data normalisation, web scraping, ETL processes</dd>
+      </div>
+      <div class="row">
+        <dt>Infrastructure &amp; DevOps</dt>
+        <dd>AWS (EC2, S3), self-hosted servers; Docker, Ansible, CI/CD (GitHub Actions, GitLab CI); RabbitMQ, Celery, message queue systems</dd>
+      </div>
+      <div class="row">
+        <dt>AI &amp; machine learning</dt>
+        <dd>OpenAI, Anthropic and Mistral API integrations; locally deployed speech-to-text models; vector search with pgvector; AI-driven data processing and automation</dd>
+      </div>
+      <div class="row">
+        <dt>Languages spoken</dt>
+        <dd>Ukrainian — native · Russian — native · English — proficient</dd>
+      </div>
+    </dl>
+  </section>
 
-                <div class="skill-category">
-                    <h3>AI & ML</h3>
-                    <ul>
-                        <li>OpenAI API</li>
-                        <li>Anthropic API</li>
-                        <li>Mistral API</li>
-                        <li>Speech-to-Text models</li>
-                        <li>AI-driven automation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <section>
+    <h2 class="label">Education</h2>
+    <dl class="rows">
+      <div class="row">
+        <dt>2013 — 2017</dt>
+        <dd>
+          <div class="degree">BSc in Applied Mathematics</div>
+          <div class="school">Taras Shevchenko National University of Kyiv, Kyiv, Ukraine</div>
+        </dd>
+      </div>
+    </dl>
+  </section>
 
-        <div class="section">
-            <h2>Education</h2>
-            <div class="education">
-                <h3>Bachelor of Science in Applied Mathematics</h3>
-                <p>Taras Shevchenko National University of Kyiv | Kyiv, Ukraine | 2013 - 2017</p>
-            </div>
-        </div>
+  <section class="contact">
+    <h2 class="label">Get in touch</h2>
+    <p>Open to interesting problems — drop me a line.</p>
+    <a class="email" href="mailto:hi@ryzhkov.ie">hi@ryzhkov.ie</a>
+  </section>
 
-        <div class="section contact-section">
-            <h2>Get In Touch</h2>
-            <p style="color: #4a5568; margin-bottom: 20px;">
-                Interested in collaborating or discussing opportunities? Feel free to reach out.
-            </p>
-            <div class="contact-links">
-                <a href="mailto:hi@ryzhkov.ie" class="contact-item">
-                    <span>📧</span>
-                    <span>hi@ryzhkov.ie</span>
-                </a>
-            </div>
-        </div>
-    </div>
+  <footer>
+    <p>© 2026 Volodymyr Ryzhkov</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Volodymyr Ryzhkov. All rights reserved.</p>
-    </footer>
+</div>
+
 </body>
 </html>
